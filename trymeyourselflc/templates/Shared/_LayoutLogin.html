@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{%block title%} {%endblock%} - Flask demo </title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/site.css')}}"  />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/layout.css')}}"  />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}"  />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.min.css')}}"  />
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">TryMeYourSelf</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">Our Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"  href="{{ url_for('login') }}" >Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="{{url_for('register')}}">Register</a>
+                        </li>
+                        
+                    </ul>
+
+                    <ul class="navbar-nav ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://1.bp.blogspot.com/-Vwvgdf9jMiQ/X_NVHCAXe0I/AAAAAAAAAFY/kz3buTAlSi0FTXVQJRsTIm0nmDOvD_v7wCK4BGAYYCw/s1600/TryMeYourSelf.png" class="rounded-circle mr-2" alt="Profile Picture" style="width: 20px; height: 20px; object-fit: cover;">
+                                <span class="d-none d-sm-inline-block">UserLogin.Username</span> <!-- Access the username property -->
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                <a class="dropdown-item" href="#">Change Password</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/Login/Logout">Logout</a>
+                            </div>
+                    
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+   <div class="bg-primary">
+    {%block body%} {%endblock%}
+        
+    </div>
+
+    <footer class="border-top footer text-muted text-center">
+        <div class="container">
+            &copy; 2024 - <a href="index">www.TryMeYourSelf.com </a>
+        </div>
+    </footer>
+
+    <script src="{{url_for('static',filename='js/bootstrap/bootstrap.bundle.min.js')}}"></script>
+    
+</body>
+</html>
